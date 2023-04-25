@@ -1,0 +1,316 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.cartaBox {
+    display: flex;
+    justify-content: center;
+    gap: 75px;
+    padding: 0 5%;
+
+
+    @include m.phone {
+        flex-direction: column;
+    }
+    @include m.tablet {
+        flex-direction: column;
+    }
+    @include m.desktopS {
+        flex-direction: column;
+    }
+    
+    h1 {
+        text-align: center;
+        margin: 0 auto 10px auto;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #000000;
+        width: 70%;
+        font-family: v.$letra;
+        font-size: 30px;
+    }
+
+    h1:last-child {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        text-align: center;
+        margin: auto;
+        width: 70%;
+        margin-bottom: 20px;
+        font-family: v.$letra;
+        font-size: 22px;
+    }
+
+    h3 {
+        margin: 25px 0 10px 0;
+        padding: 0 0 0 5%;
+        font-family: v.$letra;
+        font-size: 20px;
+        color: #a4a296;
+    }
+
+    .flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10%;
+        margin-bottom: 5px;
+
+        div {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            input {
+                width: 40px;
+                font-family: v.$letra;
+                font-size: 17px;
+                outline: none;
+                border: none;
+            }
+        }
+
+        h4 {
+            font-family: v.$letra;
+            font-size: 16px;
+        }
+    }
+
+    p {
+        padding: 0 30% 0 10%;
+        margin-bottom: 20px;
+        font-family: v.$letra;
+        font-size: 15px;
+    }
+
+    .tacoIcon {
+        font-size: 16px;
+        margin-right: 3px;
+    }
+}
+
+.order_total {
+    
+    h2 {
+        font-family: v.$letra;
+        text-align: center;
+        width: 55%;
+        padding: 5px;
+        border-top: 1px solid #000000;
+        border-bottom: 1px solid #000000;
+        margin: auto;
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    .total {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 60%;
+        margin: auto;
+        align-items: center;
+        justify-items: center;
+
+        @include m.phone {
+            width: 10%;
+        }
+        @include m.tablet {
+            width: 70%;
+        }
+        @include m.desktopS {
+            width: 70%;
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            font-family: v.$letra;
+            font-size: 15px;
+            margin-bottom: 5px;
+            gap: 15px;
+
+            @include m.phone {
+                gap: 7px;
+            }
+
+            div {
+                display: flex;
+                gap: 10px;
+
+                @include m.phone {
+                    gap: 5px;
+                }
+
+                svg {
+                    font-size: 15px !important;
+                }
+            }
+
+            span {
+                margin-left: 20px;
+
+                @include m.phone {
+                    margin-left: 5px;
+                }
+            }
+        }
+
+        h3 {
+            font-family: v.$letra;
+            font-size: 50px;
+            margin-bottom: 10px;
+            text-align: center;
+
+
+            @include m.phone {
+                font-size: 30px;
+            }
+        }
+
+        h4 {
+            font-family: v.$letra;
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 20px;
+
+            @include m.phone {
+                font-size: 20px;
+            }
+        }
+
+        a {
+            font-size: 17px;
+            font-family: v.$letra;
+            background-color: rgba(0, 0, 0, .7);
+            border-radius: 12px;
+            padding: 10px 20px;
+            color: #FFFFFF;
+            cursor: pointer;
+            border: none;
+            margin: auto;
+
+            @include m.phone {
+                font-size: 12px;
+                padding: 5px 10px;
+            }
+    
+            &:active {
+                transform: scale(1.1);
+                transition: all 200ms ease;
+            }
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 1);
+            }
+        }
+    }
+}
+
+.client_data {
+    font-family: v.$letra;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: auto;
+    gap: 5px;
+    margin-bottom: 20px;
+
+    @include m.phone {
+        width: 90%;
+    }
+    @include m.tablet {
+        width: 60%;
+    }
+    @include m.desktopS {
+        width: 60%;
+    }
+
+    input, select {
+        outline: none;
+        font-family: v.$letra;
+        font-size: 17px;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 5px;
+        margin-bottom: 5px;
+    }
+
+    label {
+        font-size: 17px;
+    }
+
+    .btn_clear {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+        cursor: pointer;
+        margin-bottom: 10px;
+
+        button {
+            font-size: 13px;
+            font-family: v.$letra;
+            background-color: rgba(0, 0, 0, .7);
+            border-radius: 12px;
+            padding: 7px 20px;
+            color: #FFFFFF;
+            cursor: pointer;
+            border: none;
+    
+            &:active {
+                transform: scale(1.1);
+                transition: all 200ms ease;
+            }
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 1);
+            }
+        }
+    }
+}
+
+.img_box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+
+    @include m.phone {
+        width: 90%;
+    }
+
+    .imagenes {
+        max-width: 100px;
+
+        @include m.phone {
+            max-width: 60px;
+        }
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.box-1 {
+    margin-top: 50px;
+    margin-bottom: -10px;
+}
+
+.box-2 {
+    margin-top: -40px;
+    margin-bottom: 20px;
+
+    @include m.phone {
+        margin-top: -20px;
+    }
+    @include m.tablet {
+        margin-top: -20px;
+    }
+    @include m.desktopS {
+        margin-top: -20px;
+    }
+}

@@ -1,0 +1,29 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.sliderBox {
+    padding: 0 15%;
+
+    @include m.phone {
+        padding: 0 5%;
+    }
+    @include m.tablet {
+        padding: 0 5%;
+    }
+    @include m.desktopS {
+        padding: 0 5%;
+    }
+
+    .splide__arrow {
+        display: none;
+    }
+
+    .imgBox {        
+        img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            border-radius: 12px;
+        }
+    }
+}
