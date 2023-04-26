@@ -267,6 +267,34 @@
             }
         }
     }
+
+    .mesa_data {
+        font-family: v.$letra;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-bottom: 20px;
+
+        p {
+            color: red;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        select {
+            outline: none;
+            font-family: v.$letra;
+            font-size: 17px;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 5px;
+            margin-bottom: 5px;
+        }
+    
+        label {
+            font-size: 17px;
+        }
+    }
 }
 
 .img_box {

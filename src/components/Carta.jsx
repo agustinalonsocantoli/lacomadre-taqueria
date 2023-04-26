@@ -36,6 +36,7 @@ export const Carta = () => {
     const [ totalOrder, setTotalOrder ] = useState(0);
     const [ location, setLocation ] = useState(null);
     const [ client, setClient ] = useState(null);
+    const [ mesa, setMesa ] = useState(null);
 
     const clearOrder = () => {
         setPastor(0);
@@ -358,6 +359,28 @@ export const Carta = () => {
                     <option value="Tertulia">Tertulia</option>
                 </select>
 
+                { location === 'Tertulia' &&
+                <div className='mesa_data'>
+                <label>En que mesa se encuentra?</label>
+                    <select name="mesa" defaultValue="default" onChange={(e) => setMesa(e.target.value)}>
+                        <option value="default" disabled="disabled">Seleccione</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    <p>Al realizar el pedido, avisar al camarero.</p>
+                </div>
+                }
+
                 <div className='btn_clear'>
                         <button onClick={confirmOrder}>Confirmar</button>
                         <button onClick={clearOrder}>Borrar todo</button>
@@ -383,7 +406,7 @@ export const Carta = () => {
                             {gringa > 0 && <li><div><GiTacos className="tacoIcon"/>GRINGA</div> <span>{gringa}</span></li>}
                             {viggieGringa > 0 && <li><div><GiTacos className="tacoIcon"/>VEGGIE GRINGA</div> <span>{viggieGringa}</span></li>}
                             {nachos > 0 && <li><div><GiNachos className="tacoIcon"/>NACHOS</div> <span>{nachos}</span></li>}
-                            {gringa > 0 && <li><div><GiTacos className="tacoIcon"/>GRINGA GRANDE</div> <span>{gringa}</span></li>}
+                            {gringaGrande > 0 && <li><div><GiTacos className="tacoIcon"/>GRINGA GRANDE</div> <span>{gringaGrande}</span></li>}
                             {champi > 0 && <li><div><GiTacos className="tacoIcon"/>CHAMPIÑONES</div> <span>{champi}</span></li>}
                             {alubias > 0 && <li><div><GiTacos className="tacoIcon"/>ALUBIAS</div> <span>{alubias}</span></li>}
                         </ul>
@@ -394,7 +417,7 @@ export const Carta = () => {
                         <h4>{totalOrder}€</h4>
 
                         <a 
-                        href={`https://wa.me/34664558840?text=Hola,%20mi%20nombre%20es%20${client}.Estoy%20realizando%20mi%20pedido%20desde%20${location},%20quisiera%20lo%20siguiente%20:${pastor > 0 ? '%20-%20PASTOR(' + pastor + ')' : ''}${cochinita > 0 ? '%20-%20COCHINITA(' + cochinita + ')' : ''}${chorizo > 0 ? '%20-%20CHORIZO(' + chorizo + ')' : ''}${carnitas > 0 ? '%20-%20CARNITAS(' + carnitas + ')' : ''}${cueritos > 0 ? '%20-%20CUERITOS(' + cueritos + ')': ''}${lengua > 0 ? '%20-%20LENGUA(' + lengua + ')' : ''}${birria > 0 ? '%20-%20BIRRIA(' + birria + ')' : ''}${res > 0 ? '%20-%20RES(' + res + ')' : ''}${birriaQuesadilla > 0 ? '%20-%20BIRRIA QUESADILLA(' + birriaQuesadilla + ')' : ''}${gringa > 0 ? '%20-%20GRINGA(' + gringa + ')' : ''}${viggieGringa > 0 ? '%20-%20VEGGIE GRINGA(' + viggieGringa + ')' : ''}${nachos > 0 ? '%20-%20NACHOS(' + nachos + ')' : ''}${gringa > 0 ? '%20-%20GRINGA GRANDE(' + gringa + ')' : ''}${champi > 0 ? '%20-%20CHAMPIÑONES(' + champi + ')' : ''}${alubias > 0 ? '%20-%20ALUBIAS(' + alubias + ')' : ''}`}
+                        href={`https://wa.me/34664558840?text=Hola,%20mi%20nombre%20es%20${client}.Estoy%20realizando%20mi%20pedido%20desde%20${location},%20quisiera%20lo%20siguiente%20:${pastor > 0 ? '%20-%20PASTOR(' + pastor + ')' : ''}${cochinita > 0 ? '%20-%20COCHINITA(' + cochinita + ')' : ''}${chorizo > 0 ? '%20-%20CHORIZO(' + chorizo + ')' : ''}${carnitas > 0 ? '%20-%20CARNITAS(' + carnitas + ')' : ''}${cueritos > 0 ? '%20-%20CUERITOS(' + cueritos + ')': ''}${lengua > 0 ? '%20-%20LENGUA(' + lengua + ')' : ''}${birria > 0 ? '%20-%20BIRRIA(' + birria + ')' : ''}${res > 0 ? '%20-%20RES(' + res + ')' : ''}${birriaQuesadilla > 0 ? '%20-%20BIRRIA QUESADILLA(' + birriaQuesadilla + ')' : ''}${gringa > 0 ? '%20-%20GRINGA(' + gringa + ')' : ''}${viggieGringa > 0 ? '%20-%20VEGGIE GRINGA(' + viggieGringa + ')' : ''}${nachos > 0 ? '%20-%20NACHOS(' + nachos + ')' : ''}${gringaGrande > 0 ? '%20-%20GRINGA GRANDE(' + gringaGrande + ')' : ''}${champi > 0 ? '%20-%20CHAMPIÑONES(' + champi + ')' : ''}${alubias > 0 ? '%20-%20ALUBIAS(' + alubias + ')' : ''}`}
                         target='_blank' 
                         rel='noopener noreferrer'
                         >
